@@ -1,16 +1,18 @@
 import * as React from 'react'
-//import 'react-native-gesture-handler'
+import 'react-native-gesture-handler'
+
 import { Home } from '../screens/Home'
 import { Login } from '../screens/Login'
 import { SignUp } from '../screens/SignUp'
 import { Profile } from '../screens/Profile'
-//import { createStackNavigator } from '@react-navigation/native-stack';
 
-const Stack = createStackNavigator();
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
+
+const Stack = createNativeStackNavigator();
 
 export function Routes() {
     return(
-        <Stack.Navigator initialRouteName="Dashboard">
+        <Stack.Navigator initialRouteName="Login">
             <Stack.Screen
                 name="Login"
                 component={Login}

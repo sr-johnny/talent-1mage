@@ -1,11 +1,17 @@
 import React from 'react'
 
-import { Box } from 'react-native'
+import { Box } from 'native-base'
 
-export function Home(){
+export function Home() {
   return (
-    <Box>
-
+    <Box
+      safeArea
+      flex={1}
+      backgroundColor="#ffffff"
+      justifyContent="center"
+      alignItems="center"
+    >
+      Hello!
     </Box>
   );
 }

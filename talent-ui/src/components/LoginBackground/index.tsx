@@ -4,6 +4,7 @@ import { Box, VStack } from 'native-base'
 import { ViewProps } from 'react-native'
 
 import BrandSVG from '../../assets/brand.svg'
+import { theme } from '../../global/theme'
 
 type Props = ViewProps & {
   title: String;
@@ -15,12 +16,11 @@ export function LoginBackground({title, content, ...rest}:Props){
     <VStack
       safeArea
       flex={1}
-      backgroundColor="#bfdbfe"
+      backgroundColor={theme.colors.blue}
       justifyContent="space-between"
     >
       <Box
         h="20%"
-        backgroundColor="#bfdbfe"
         alignItems="center"
         justifyContent="center"
       >
@@ -31,12 +31,11 @@ export function LoginBackground({title, content, ...rest}:Props){
         h="75%"
       >
         <Box
-          w={304}//"77%"
-          h={305}//"53%"
+          w={304} //Descartado "77%", pois quando o teclado é aberto, muda as porcentagens
+          h={305} //Descartado "53%", pois quando o teclado é aberto, muda as porcentagens
           alignSelf="center"
           marginTop={5}
-          //position="relative"//"absolute"
-          backgroundColor="#ffffff"
+          backgroundColor={theme.colors.white}
           style={{
             transform: [{ rotate: '45deg' }]
           }}
@@ -51,16 +50,16 @@ export function LoginBackground({title, content, ...rest}:Props){
           position="absolute"
           borderTopRadius={65}
           marginTop="30%"
-          backgroundColor="#ffffff"
+          backgroundColor={theme.colors.white}
           alignItems="center"
           {...rest}
         >
           <Box
             marginBottom={10}
             _text={{
-              fontSize: "3xl",
-              fontWeight: "bold",
-              color: "#000000"
+              fontSize: '3xl',
+              fontFamily: theme.fonts.poppins_ExtraBold,
+              color: theme.colors.black
             }}
           > 
           {title}
