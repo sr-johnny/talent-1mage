@@ -1,13 +1,12 @@
 import React from 'react'
 
-import { Button } from 'native-base'
+import { Button, IButtonProps } from 'native-base'
 
-type Props = {
+type Props = IButtonProps & {
   title: string;
-  value?: string;
 }
 
-export function ButtonLogin({ value, title }: Props) {
+export function ButtonLogin({ title, ...rest }: Props) {
   return (
     <Button
       w="80%"
@@ -16,6 +15,7 @@ export function ButtonLogin({ value, title }: Props) {
       borderRadius={4}
       color="#ffffff"
       backgroundColor="#000000"
+      {...rest}
     >
       {title}
     </Button>
