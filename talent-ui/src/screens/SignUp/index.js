@@ -1,10 +1,16 @@
 import React from 'react'
+import { useNavigation } from '@react-navigation/native'
 
 import { LoginBackground } from '../../components/LoginBackground'
-import { InputUnderlined } from '../../components/InputUnderlined';
-import { ButtonLogin } from '../../components/ButtonLogin';
+import { InputUnderlined } from '../../components/InputUnderlined'
+import { ButtonLogin } from '../../components/ButtonLogin'
 
 export function SignUp() {
+  const navigation = useNavigation();
+
+  function handleHomeScreen() {
+    navigation.navigate('Home');
+  }
   return (
     <LoginBackground
       title="Sign Up"
@@ -16,7 +22,7 @@ export function SignUp() {
           <InputUnderlined title="Password" />
           <InputUnderlined title="Confirm password" />
 
-          <ButtonLogin title="Register" />
+          <ButtonLogin title="Register" onPress={handleHomeScreen}/>
         </>
       }
     />

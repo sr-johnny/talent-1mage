@@ -1,6 +1,7 @@
 import * as React from 'react'
 import 'react-native-gesture-handler'
 
+import { HomeScreen } from '../components/HomeScreen'
 import { Home } from '../screens/Home'
 import { Login } from '../screens/Login'
 import { SignUp } from '../screens/SignUp'
