@@ -1,6 +1,6 @@
 import React from 'react'
 import { Box, Button } from 'native-base'
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native'
 
 import { LoginBackground } from '../../components/LoginBackground'
 import { InputUnderlined } from '../../components/InputUnderlined'

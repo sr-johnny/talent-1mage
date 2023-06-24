@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { Box, Input, Stack } from 'native-base'
-import { theme } from '../../global/theme';
+import { theme } from '../../global/theme'
 
 type Props = {
   title: string;
