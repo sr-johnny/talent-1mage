@@ -1,4 +1,5 @@
 import React from 'react'
+import AuthContext from './src/contexts/auth'
 import { NativeBaseProvider } from 'native-base'
 import { NavigationContainer } from '@react-navigation/native'
 
@@ -40,3 +41,5 @@ export default function App() {
     </NativeBaseProvider>
   );
 }
+
+//        <AuthContext>

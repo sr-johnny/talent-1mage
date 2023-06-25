@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useNavigation } from '@react-navigation/native'
 
 import { LoginBackground } from '../../components/LoginBackground'
@@ -8,8 +8,10 @@ import { ButtonLogin } from '../../components/ButtonLogin'
 export function SignUp() {
   const navigation = useNavigation();
 
+  const [ signed, setSigned ] = useState(false);
+
   function handleHomeScreen() {
-    navigation.navigate('Home');
+    navigation.navigate('HomeTabNavigator');
   }
   return (
     <LoginBackground

@@ -1,80 +1,65 @@
 import React from 'react'
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 
-import { Feather } from '@expo/vector-icons'
+import { Box, ScrollView } from 'native-base'
+import { useNavigation } from '@react-navigation/native'
 
 import { theme } from '../../global/theme'
 
-import { HomeScreen } from '../../components/HomeScreen'
-import { Profile } from '../Profile'
-import { MoviesList } from '../MoviesList'
-import { Settings } from '../Settings'
+import { SearchBar } from '../../components/SearchBar'
+import { TitleHomeScreen } from '../../components/TitleHomeScreen'
+import { TopBarHome } from '../../components/TopBarHome'
+import { CardStartCampaign } from '../../components/CardStartCampaign'
+import { LabelHomeScreen } from '../../components/LabelHomeScreen'
+import { CardSection } from '../../components/CardSection'
+import { Card } from '../../components/Card'
+import { IconButton } from '../../components/IconButton'
+import { BarTopFundraisers } from '../../components/BarTopFundraisers'
+import { CardMyCampaign } from '../../components/CardMyCampaign'
 
 export function Home() {
-  const Tab = createBottomTabNavigator();
+  const navigation = useNavigation();
+
+  function getProfileScreen() {
+    navigation.navigate('Profile');
+  }
 
   return (
-    <Tab.Navigator
-      screenOptions={{
-        tabBarActiveTintColor: theme.colors.green,
-        tabBarInactiveTintColor: theme.colors.balck_label,
-        tabBarLabelStyle: {
-          fontFamily: theme.fonts.poppins_Regular,
-          fontSize: 12,
-        },
-        tabBarIconStyle: {
-          height: 24,
-          width: 24,
-        },
-        activeTintColor: theme.colors.green,
-        tabBarStyle:{
-          height: 75,
-          paddingTop: 4,
-          paddingBottom: 10,
-          backgroundColor: theme.colors.white_button,
-          borderTopColor: 'transparent',
-        }
-      }}>
-      <Tab.Screen
-        name="Home"
-        component={HomeScreen}
-        options={{
-          tabBarIcon: ({size, color}) => (
-            <Feather name="home" size={size} color={color} />
-          ),
-          headerShown: false,
-        }}
-      />
-      <Tab.Screen
-        name="Saved"
-        component={MoviesList}
-        options={{
-          tabBarIcon: ({size, color}) => (
-            <Feather name="heart" size={size} color={color} />
-          ),
-          headerShown: false,
-        }}
-      />
-      <Tab.Screen
-        name="Settings"
-        component={Settings}
-        options={{
-          tabBarIcon: ({size, color}) => (
-            <Feather name="settings" size={size} color={color} />
-          ),
-          headerShown: false,
-        }}
-      />
-      <Tab.Screen
-        name="Profile"
-        component={Profile}
-        options={{
-          tabBarIcon: ({size, color}) => (
-            <Feather name="user" size={size} color={color} />
-          ),
-          headerShown: false,
-        }}
-      />
-    </Tab.Navigator>
+    <Box
+      safeArea
+      flex={1}
+      paddingX={4}
+      backgroundColor={theme.colors.white}
+    >
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        overScrollMode="never"
+      >
+
+        <TopBarHome onPress={getProfileScreen} />
+
+        <TitleHomeScreen />
+
+        <SearchBar />
+
+        <CardStartCampaign />
+
+        <LabelHomeScreen title="Categories" />
+        <CardSection>
+          <Card title="All" iconName="grid" colorIcon="purple"/>
+          <Card title="Campaigns" iconName="volume-2" colorIcon="water"/>
+          <Card title="Donate Goods" iconName="briefcase" colorIcon="sky"/>
+          <Card title="Charity" iconName="dollar-sign" colorIcon="orange"/>
+          <Card title="Events" iconName="calendar" colorIcon="pink"/>
+          <Card title="Volunteers" iconName="users" colorIcon="aqua"/>
+        </CardSection>
+
+        <LabelHomeScreen title="My Campaign" />
+        <CardSection>
+          <CardMyCampaign />
+        </CardSection>
+
+        <BarTopFundraisers title="Top Fundraisers" />
+      </ScrollView>
+    </Box>
   );
 }

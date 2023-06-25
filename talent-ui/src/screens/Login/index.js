@@ -1,17 +1,23 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Box, Button } from 'native-base'
 import { useNavigation } from '@react-navigation/native'
+
+import { theme } from '../../global/theme'
 
 import { LoginBackground } from '../../components/LoginBackground'
 import { InputUnderlined } from '../../components/InputUnderlined'
 import { ButtonLogin } from '../../components/ButtonLogin'
-import { theme } from '../../global/theme';
+
+import AuthContext from '../../contexts/auth'
 
 export function Login() {
   const navigation = useNavigation();
+  const {signed, signIn} = useContext(AuthContext);
 
-  function handleHomeScreen() {
-    navigation.navigate('Home');
+  //console.log("Info: Tela Login | Signed Status: "+signed);
+
+  function handleSignIn() {
+    navigation.navigate('HomeTabNavigator');
   }
 
   function handleSignUpScreen() {
@@ -26,7 +32,7 @@ export function Login() {
           <InputUnderlined title="Email" />
           <InputUnderlined title="Password" />
 
-          <ButtonLogin title="Log In" onPress={handleHomeScreen} />
+          <ButtonLogin title="Log In" onPress={handleSignIn} />
 
           <Box 
             marginTop={7} 
