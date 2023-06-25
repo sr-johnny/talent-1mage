@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Text, Stack } from 'native-base'
+import { Box, Text, Stack, Button } from 'native-base'
 
 import { theme } from '../../global/theme'
 
@@ -9,6 +9,11 @@ import { TitleProfileScreen } from '../../components/TitleProfileScreen'
 import { ButtonProfileScreen } from '../../components/ButtonProfileScreen'
 
 export function Profile() {
+
+  function handleChangeImage() {
+    console.log('Tela Profile | Alteração de foto');
+  }
+
   return (
     <Stack
       safeArea
@@ -48,24 +53,26 @@ export function Profile() {
           email="mariaissa@gmail.com"
         />
 
-        <ButtonProfileScreen title="Settings"/>
-        <ButtonProfileScreen title="Pending reviews"/>
-        <ButtonProfileScreen title="Faq"/>
-        <ButtonProfileScreen title="Help"/>
+        <ButtonProfileScreen title="Settings" />
+        <ButtonProfileScreen title="Pending reviews" />
+        <ButtonProfileScreen title="Faq" />
+        <ButtonProfileScreen title="Help" />
 
       </Box>
-      <Box
-        w="25%"
-        h="12.5%"
-        top="31%"
-        rounded={100}
-        zIndex={3}
+      <Button
+        onPress={handleChangeImage}
+        variant="unstyled"
+        w={75}
+        h={75}
+        top="55%"
+        borderRadius={38}
+        zIndex={2}
         alignItems="center"
         justifyContent="center"
         backgroundColor={theme.colors.white_button}
       >
         <IconButton title="camera" colorIcon="icon" size="4xl" />
-      </Box>
+      </Button>
     </Stack>
   );
 }

@@ -29,13 +29,11 @@ export function IconButton({ title, colorIcon, ...rest }: Props) {
     }
   }
   return (
-      <Pressable>
         <Icon
           as={Feather}
           name={title}
           color={getColorIcon(colorIcon)}
           {...rest}
         />
-      </Pressable>
   );
 }
