@@ -1,0 +1,8 @@
+{
+  "React Native Native-Base": {
+    "scope": "html, vue, javascript, typescript, typescriptreact",
+    "prefix": "rnnb",
+    "body": "import React from 'react'\n\nimport { Box } from 'native-base'\n\nexport function (){\n  return (\n    <Box>\n\n    </Box>\n  );\n}",
+    "description": "Snippet para facilitar iniciação de componente Native-Base"
+  }
+}
