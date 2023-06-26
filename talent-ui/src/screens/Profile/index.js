@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Text, Stack, Button } from 'native-base'
+import { Box, Stack, Button } from 'native-base'
 
 import { theme } from '../../global/theme'
 
@@ -11,7 +11,7 @@ import { ButtonProfileScreen } from '../../components/ButtonProfileScreen'
 export function Profile() {
 
   function handleChangeImage() {
-    console.log('Tela Profile | Alteração de foto');
+    //console.log('Tela Profile | Alteração de foto');
   }
 
   return (
@@ -60,7 +60,7 @@ export function Profile() {
 
       </Box>
       <Button
-        onPress={handleChangeImage}
+        //onPress={handleChangeImage}  //Função de mudança de imagem
         variant="unstyled"
         w={75}
         h={75}

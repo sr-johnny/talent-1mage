@@ -5,16 +5,15 @@ import { useNavigation } from '@react-navigation/native'
 
 import { theme } from '../../global/theme'
 
-import { SearchBar } from '../../components/SearchBar'
-import { TitleHomeScreen } from '../../components/TitleHomeScreen'
-import { TopBarHome } from '../../components/TopBarHome'
-import { CardStartCampaign } from '../../components/CardStartCampaign'
-import { LabelHomeScreen } from '../../components/LabelHomeScreen'
-import { CardSection } from '../../components/CardSection'
 import { Card } from '../../components/Card'
-import { IconButton } from '../../components/IconButton'
-import { BarTopFundraisers } from '../../components/BarTopFundraisers'
+import { SearchBar } from '../../components/SearchBar'
+import { TopBarHome } from '../../components/TopBarHome'
+import { CardSection } from '../../components/CardSection'
 import { CardMyCampaign } from '../../components/CardMyCampaign'
+import { LabelHomeScreen } from '../../components/LabelHomeScreen'
+import { TitleHomeScreen } from '../../components/TitleHomeScreen'
+import { CardStartCampaign } from '../../components/CardStartCampaign'
+import { BarTopFundraisers } from '../../components/BarTopFundraisers'
 
 export function Home() {
   const navigation = useNavigation();

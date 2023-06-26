@@ -1,14 +1,12 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useNavigation } from '@react-navigation/native'
 
+import { ButtonLogin } from '../../components/ButtonLogin'
 import { LoginBackground } from '../../components/LoginBackground'
 import { InputUnderlined } from '../../components/InputUnderlined'
-import { ButtonLogin } from '../../components/ButtonLogin'
 
 export function SignUp() {
   const navigation = useNavigation();
-
-  const [ signed, setSigned ] = useState(false);
 
   function handleHomeScreen() {
     navigation.navigate('HomeTabNavigator');
@@ -21,8 +19,8 @@ export function SignUp() {
           <InputUnderlined title="Nome" />
           <InputUnderlined title="Sobrenome" />
           <InputUnderlined title="Email" />
-          <InputUnderlined title="Password" />
-          <InputUnderlined title="Confirm password" />
+          <InputUnderlined type="password" title="Password" />
+          <InputUnderlined type="password" title="Confirm password" />
 
           <ButtonLogin title="Register" onPress={handleHomeScreen}/>
         </>

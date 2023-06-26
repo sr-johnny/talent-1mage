@@ -1,16 +1,16 @@
 import React from 'react'
 
-import { Box, Input, Stack } from 'native-base'
+import { Box, IInputProps, Input, KeyboardAvoidingView } from 'native-base'
 import { theme } from '../../global/theme'
 
-type Props = {
+type Props = IInputProps & {
   title: string;
   value?: string;
 }
 
-export function InputUnderlined({value, title}: Props) {
+export function InputUnderlined({value, title, ...rest}: Props) {
   return (
-    <Stack w="80%">
+    <KeyboardAvoidingView w="80%">
       <Box
         _text={{
           fontSize: 12,
@@ -27,7 +27,8 @@ export function InputUnderlined({value, title}: Props) {
         maxH="9" 
         variant="underlined" 
         value={value}
+        {...rest}
       />
-    </Stack>
+    </KeyboardAvoidingView>
   );
 }

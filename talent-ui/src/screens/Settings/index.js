@@ -5,7 +5,7 @@ import { theme } from '../../global/theme'
 
 export function Settings(){
   return (
-    <Box flex={1} backgroundColor={theme.colors.purple}>
+    <Box flex={1} backgroundColor={theme.colors.white_button}>
 
     </Box>
   );
