@@ -1,41 +1,16 @@
 import React from 'react'
 
-import { Box, Text, Button, Stack } from 'native-base'
+import { Box, Text, Button, Stack, Image } from 'native-base'
 
 import { theme } from '../../global/theme'
-import { IconCard } from '../IconCard';
 
 type Props = {
   title: string;
-  iconName: string;
-  colorIcon: string;
+  source: any;
+  size: string;
 }
 
-export function CardMovie({ title, iconName, colorIcon }: Props) {
-  function getColorIcon(colorIcon) {
-    switch (colorIcon) {
-      case 'purple':
-        return theme.colors.purple;
-        break;
-      case 'water':
-        return (theme.colors.water);
-        break;
-      case 'sky':
-        return (theme.colors.sky);
-        break;
-      case 'orange':
-        return (theme.colors.orange);
-        break;
-      case 'pink':
-        return (theme.colors.pink);
-        break;
-      case 'aqua':
-        return (theme.colors.aqua);
-        break;
-      default:
-        console.log("Erro ao selecionar a cor");
-    }
-  }
+export function CardMovie({ title, source, size }: Props) {
   return (
     <Stack
       h={110}
@@ -50,7 +25,6 @@ export function CardMovie({ title, iconName, colorIcon }: Props) {
         alignItems="center"
         justifyContent="center"
         borderRadius={16}
-        backgroundColor={getColorIcon(colorIcon)}
         opacity={0.1}
         zIndex={1}
       >
@@ -65,7 +39,7 @@ export function CardMovie({ title, iconName, colorIcon }: Props) {
         alignItems="center"
         justifyContent="center"
       >
-        <IconCard title={iconName} colorIcon={colorIcon} />
+        <Image source={source}/>
       </Box>
       <Box
         w="100%"
